@@ -11,7 +11,7 @@ enum custom_keycodes {
   LOWER,
   RAISE,
 	EGRV,
-	EACU,
+//	EACU,
 	UGRV,
 	IGRV,
 	OGRV,
@@ -38,7 +38,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[_RAISE] = LAYOUT(
 	KC_TILD, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_UNDS, 
-	KC_TRNS, KC_NO, EACU, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_LBRC, KC_RBRC, KC_PLUS, 
+	KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_LBRC, KC_RBRC, KC_PLUS, 
 	KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_LCBR, KC_RCBR, KC_COLN, KC_DQUO, 
 	KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_LT, KC_GT, KC_QUES, KC_PIPE, 
 	KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
@@ -119,12 +119,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 			}
 			return false;
 			break;
-		case EACU:
-			if (record->event.pressed) {
-				send_string("'e");
-			}
-			return false;
-			break;
+//		case EACU:
+//			if (record->event.pressed) {
+//				send_string("'e");
+//			}
+//			return false;
+//			break;
 	}
 	return true;
 }
