@@ -10,14 +10,37 @@ enum custom_keycodes {
   BASE,
   LOWER,
   RAISE,
-	EGRV,
-	EACU,
-	UGRV,
-	IGRV,
-	OGRV,
-	AGRV
 };
 
+enum unicode_names {
+    EACU,
+    EACU_C,
+		EGRV,
+		EGRV_C,
+		AGRV,
+		AGRV_C,
+		UGRV,
+		UGRV_C,
+		IGRV,
+		IGRV_C,
+		OGRV,
+		OGRV_C
+};
+
+const uint32_t PROGMEM unicode_map[] = {
+    [EACU] = 0x00E9,
+		[EACU_C] = 0x00C9,
+		[EGRV] = 0x00E8,
+		[EGRV_C] = 0x00C8,
+		[AGRV] = 0x00E0,
+		[AGRV_C] = 0x00C0,
+		[UGRV] = 0x00F9,
+		[UGRV_C] = 0x00D9,
+		[IGRV] = 0x00EC,
+		[IGRV_C] = 0x00CC,
+		[OGRV] = 0x00F2,
+		[OGRV_C] = 0x00D2
+};
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_BASE] = LAYOUT(
@@ -30,15 +53,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[_LOWER] = LAYOUT(
 	KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_DEL, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-	KC_TRNS, KC_TRNS, EGRV, KC_TRNS, KC_TRNS, KC_TRNS, KC_DEL, UGRV, IGRV, OGRV, KC_TRNS, KC_TRNS,
-	KC_TRNS, AGRV, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_DEL, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
+	KC_TRNS, KC_TRNS, XP(EGRV,EGRV_C), KC_TRNS, KC_TRNS, KC_TRNS, KC_DEL, XP(UGRV,UGRV_C), XP(IGRV,IGRV_C), XP(OGRV,OGRV_C), KC_TRNS, KC_TRNS,
+	KC_TRNS, XP(AGRV,AGRV_C), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_DEL, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
 	KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_DEL, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
 	KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_DEL, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
 	),
 
 	[_RAISE] = LAYOUT(
 	KC_TILD, KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, KC_UNDS, 
-	KC_TRNS, KC_NO, KC_NO, EACU, KC_NO, KC_NO, KC_NO, KC_LCBR, KC_RCBR, KC_LBRC, KC_RBRC, KC_PLUS, 
+	KC_TRNS, KC_NO, KC_NO, XP(EACU,EACU_C), KC_NO, KC_NO, KC_NO, KC_LCBR, KC_RCBR, KC_LBRC, KC_RBRC, KC_PLUS, 
 	KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_BSLS, KC_PIPE, KC_COLN, KC_DQUO, 
 	KC_TRNS, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_LT, KC_GT, KC_QUES, KC_PIPE, 
 	KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
@@ -89,42 +112,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 			}
 			return false;
 			break; 
-		case AGRV:
-			if (record->event.pressed) {
-				send_string("`a");
-			}
-			return false;
-			break;
-		case IGRV:
-			if (record->event.pressed) {
-				send_string("`i");
-			}
-			return false;
-			break;
-		case OGRV:
-			if (record->event.pressed) {
-				send_string("`o");
-			}
-			return false;
-			break;
-		case UGRV:
-			if (record->event.pressed) {
-				send_string("`u");
-			}
-			return false;
-			break;
-		case EGRV:
-			if (record->event.pressed) {
-				send_string("`e");
-			}
-			return false;
-			break;
-		case EACU:
-			if (record->event.pressed) {
-				send_string("'e");
-			}
-			return false;
-			break;
 	}
 	return true;
 }
