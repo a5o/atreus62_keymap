@@ -4,9 +4,7 @@
 #define _LOWER 1
 #define _RAISE 2
 #define _FUN 3
-#define _GREEKL 4
-#define _GREEKU 5
-#define _ADJUST 6
+#define _ADJUST 4
 
 enum custom_keycodes {
   BASE,
@@ -21,60 +19,6 @@ enum unicode_names {
 		UGRV,
 		IGRV,
 		OGRV,
-
-  // greek letters
-  UALPH,
-  UBETA,
-  UGAMM,
-  UDELT,
-  UEPSI,
-  UZETA,
-  UETA,
-  UTHET,
-  UIOTA,
-  UKAPP,
-  ULAMB,
-  UMU,
-  UNU,
-  UXI,
-  UOMIC,
-  UPI,
-  URHO,
-  USIGM,
-  UTAU,
-  UUPSI,
-  UPHI,
-  UCHI,
-  UPSI,
-  UOMEG,
-
-  LALPH,
-  LBETA,
-  LGAMM,
-  LDELT,
-  LEPSI,
-  LZETA,
-  LETA,
-  LTHET,
-  LIOTA,
-  LKAPP,
-  LLAMB,
-  LMU,
-  LNU,
-  LXI,
-  LOMIC,
-  LPI,
-  LRHO,
-  LSIGM,
-  LTAU,
-  LUPSI,
-  LPHI,
-  LCHI,
-  LPSI,
-  LOMEG,
-
-  FSIGM,
-
   LTEQ,
   GTEQ,
   NOTEQ,
@@ -88,56 +32,6 @@ const uint32_t PROGMEM unicode_map[] = {
 	[UGRV] = 0x00F9,
 	[IGRV] = 0x00EC,
 	[OGRV] = 0x00F2,
-  // greek letters
-  [UALPH] = 0x0391,
-  [UBETA] = 0x0392,
-  [UGAMM] = 0x0393,
-  [UDELT] = 0x0394,
-  [UEPSI] = 0x0395,
-  [UZETA] = 0x0396,
-  [UETA] = 0x0397,
-  [UTHET] = 0x0398,
-  [UIOTA] = 0x0399,
-  [UKAPP] = 0x039A,
-  [ULAMB] = 0x039B,
-  [UMU] = 0x039C,
-  [UNU] = 0x039D,
-  [UXI] = 0x039E,
-  [UOMIC] = 0x039F,
-  [UPI] = 0x03A0,
-  [URHO] = 0x03A1,
-  [USIGM] = 0x03A3,
-  [UTAU] = 0x03A4,
-  [UUPSI] = 0x03A5,
-  [UPHI] = 0x03A6,
-  [UCHI] = 0x03A7,
-  [UPSI] = 0x03A8,
-  [UOMEG] = 0x03A9,
-  [LALPH] = 0x03B1,
-  [LBETA] = 0x03B2,
-  [LGAMM] = 0x03B3,
-  [LDELT] = 0x03B4,
-  [LEPSI] = 0x03B5,
-  [LZETA] = 0x03B6,
-  [LETA] = 0x03B7,
-  [LTHET] = 0x03B8,
-  [LIOTA] = 0x03B9,
-  [LKAPP] = 0x03BA,
-  [LLAMB] = 0x03BB,
-  [LMU] = 0x03BC,
-  [LNU] = 0x03BD,
-  [LXI] = 0x03BE,
-  [LOMIC] = 0x03BF,
-  [LPI] = 0x03C0,
-  [LRHO] = 0x03C1,
-  [LSIGM] = 0x03C3,
-  [LTAU] = 0x03C4,
-  [LUPSI] = 0x03C5,
-  [LPHI] = 0x03C6,
-  [LCHI] = 0x03C7,
-  [LPSI] = 0x03C8,
-  [LOMEG] = 0x03C9,
-  [FSIGM] = 0x03C2,
 
   // other
   [LTEQ] = 0x2264, // less than or equal
@@ -151,15 +45,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	KC_GRV, KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, KC_EQL, 
 	KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_MINS, 
 	LCTL_T(KC_ESC), KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT, 
-	KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_RSFT, 
-	MO(_GREEKL), MO(_FUN), KC_LGUI, KC_LALT, RAISE, KC_SPC, KC_BSPC, KC_ENT, KC_SPC, LOWER, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT
+	KC_LSFT, KC_Z, KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, RSFT_T(KC_ENT), 
+	KC_LCTL, MO(_FUN), KC_LGUI, KC_LALT, RAISE, KC_SPC, KC_BSPC, KC_ENT, KC_SPC, LOWER, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT
 	),
 
 	[_LOWER] = LAYOUT(
-	KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_DEL, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-	KC_TRNS, KC_TRNS, KC_TRNS, X(EGRV), KC_TRNS, KC_TRNS, KC_TRNS, X(UGRV), X(IGRV), X(OGRV), KC_TRNS, KC_TRNS,
+	KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, X(NOTEQ),
+	KC_TRNS, KC_TRNS, KC_TRNS, X(EGRV), KC_TRNS, KC_TRNS, KC_TRNS, X(UGRV), X(IGRV), X(OGRV), KC_TRNS, X(PLMIN),
 	KC_TRNS, X(AGRV), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-	KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_BSLS,
+	KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, X(LTEQ), X(GTEQ), KC_TRNS, KC_BSLS,
 	KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
 	),
 
@@ -179,22 +73,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_MNXT, KC_VOLD, KC_VOLU, KC_MPLY
 	),
 
-	[_GREEKL] = LAYOUT(
-	KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, 
-	KC_TRNS, X(LTHET), X(LOMEG), X(LEPSI), X(LRHO), X(LTHET), X(LTAU), X(LUPSI), X(LIOTA), X(LOMIC), X(LPI), KC_NO, 
-	KC_TRNS, X(LALPH), X(LSIGM), X(LDELT), X(LPHI), X(LGAMM), X(LETA), X(LXI), X(LKAPP), X(LLAMB), KC_NO, KC_NO, 
-	KC_TRNS, X(LZETA), X(LCHI), X(FSIGM), KC_NO, X(LBETA), X(LNU), X(LMU), X(LTEQ), X(GTEQ), X(NOTEQ), X(PLMIN), 
-	KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT
-	),
-
-	[_GREEKU] = LAYOUT(
-	KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, 
-	KC_TRNS, X(UTHET), X(UOMEG), X(UEPSI), X(URHO), X(UTHET), X(UTAU), X(UUPSI), X(UIOTA), X(UOMIC), X(UPI), KC_NO, 
-	KC_TRNS, X(UALPH), X(USIGM), X(UDELT), X(UPHI), X(UGAMM), X(UETA), X(UXI), X(UKAPP), X(ULAMB), KC_NO, KC_NO, 
-	KC_TRNS, X(UZETA), X(UCHI), X(FSIGM), KC_NO, X(UBETA), X(UNU), X(UMU), X(LTEQ), X(GTEQ), X(NOTEQ), X(PLMIN), 
-	KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_LEFT, KC_DOWN, KC_UP, KC_RIGHT
-	),
-
 	[_ADJUST] = LAYOUT(
 	BASE, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, 
 	KC_NO, RESET, EEP_RST, DEBUG, KC_NO, KC_NO, AG_SWAP, AG_NORM, KC_NO, KC_NO, KC_NO, KC_NO, 
@@ -205,8 +83,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-	static uint8_t layer = 0;
-	layer = biton32(layer_state);
 	switch (keycode) {
 		case BASE:
 			if (record->event.pressed) {
@@ -234,20 +110,6 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 			}
 			return false;
 			break; 
-		case KC_LSFT:
-		case KC_RSFT:
-			;
-			if (layer == _GREEKU || layer == _GREEKL) {
-        if (record->event.pressed) {
-          layer_on(_GREEKU);
-          layer_off(_GREEKL);
-        } else {
-          layer_on(_GREEKL);
-          layer_off(_GREEKU);
-        }
-			}
-			return false;
-			break;
 	}
 	return true;
 }
