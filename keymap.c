@@ -19,10 +19,11 @@ enum unicode_names {
 		UGRV,
 		IGRV,
 		OGRV,
-  LTEQ,
-  GTEQ,
-  NOTEQ,
-  PLMIN,
+  	LTEQ,
+ 	 	GTEQ,
+  	NOTEQ,
+  	PLMIN,
+		LMU
 };
 
 const uint32_t PROGMEM unicode_map[] = {
@@ -33,11 +34,15 @@ const uint32_t PROGMEM unicode_map[] = {
 	[IGRV] = 0x00EC,
 	[OGRV] = 0x00F2,
 
-  // other
+  // math
   [LTEQ] = 0x2264, // less than or equal
   [GTEQ] = 0x2265, // greater than or equal
   [NOTEQ] = 0x2260, // not equal
   [PLMIN] = 0xB1, // plus minus
+
+	// misc symbols
+	[LMU] = 0x03BC
+
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -53,7 +58,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, X(NOTEQ),
 	KC_TRNS, KC_TRNS, KC_TRNS, X(EGRV), KC_TRNS, KC_TRNS, KC_TRNS, X(UGRV), X(IGRV), X(OGRV), KC_TRNS, X(PLMIN),
 	KC_TRNS, X(AGRV), KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS,
-	KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, X(LTEQ), X(GTEQ), KC_TRNS, KC_BSLS,
+	KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, X(LMU), X(LTEQ), X(GTEQ), KC_TRNS, KC_BSLS,
 	KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS, KC_TRNS
 	),
 
@@ -76,8 +81,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	[_ADJUST] = LAYOUT(
 	BASE, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, 
 	KC_NO, RESET, EEP_RST, DEBUG, KC_NO, KC_NO, AG_SWAP, AG_NORM, KC_NO, KC_NO, KC_NO, KC_NO, 
-	KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, UC_LNX, KC_NO, KC_NO, 
-	KC_NO, KC_NO, KC_NO, UC_WINC, KC_NO, KC_NO, KC_NO, UC_MAC, KC_NO, KC_NO, KC_NO, KC_NO, 
+	KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, UC_M_LN, KC_NO, KC_NO, 
+	KC_NO, KC_NO, KC_NO, UC_M_WC, KC_NO, KC_NO, KC_NO, UC_M_MA, KC_NO, KC_NO, KC_NO, KC_NO, 
 	KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO
 	)
 };
