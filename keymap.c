@@ -7,7 +7,6 @@
 #define _ADJUST 4
 
 enum custom_keycodes {
-  BASE,
   LOWER,
   RAISE,
 };
@@ -79,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	),
 
 	[_ADJUST] = LAYOUT(
-	BASE, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, 
+	KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, 
 	KC_NO, RESET, EEP_RST, DEBUG, KC_NO, KC_NO, AG_SWAP, AG_NORM, KC_NO, KC_NO, KC_NO, KC_NO, 
 	KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, KC_NO, UC_M_LN, KC_NO, KC_NO, 
 	KC_NO, KC_NO, KC_NO, UC_M_WC, KC_NO, KC_NO, KC_NO, UC_M_MA, KC_NO, KC_NO, KC_NO, KC_NO, 
@@ -89,12 +88,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 	switch (keycode) {
-		case BASE:
-			if (record->event.pressed) {
-				set_single_persistent_default_layer(_BASE);
-			}
-			return false;
-			break;
 		case LOWER:
 			if (record->event.pressed) {
 				layer_on(_LOWER);
