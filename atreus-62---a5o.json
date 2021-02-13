@@ -1,8 +1,4 @@
 [
-  {
-    "name": "Atreus 62 - a5o",
-    "notes": "This is the default layout taken from the QMK git (https://github.com/qmk/qmk_firmware/blob/master/keyboards/atreus62/keymaps/default/keymap.c)\n\nTop of Keys is the defualt layer (Layer 1) and front side of the keys is the Nav Layer (Layer 2).\n\nTHe left Shift (labeled Reset L) goes to the third/Reset layer. The only Key on the Reset Layer is the Right GUI (labeled RESET) key. This key \"puts the MCU in DFU mode for flashing new firmware (with make dfu)\""
-  },
   [
     {
       "r": 10,
@@ -174,14 +170,14 @@
       "x": 3,
       "t": "#000000"
     },
-    "Alt/\n\n\n\n\n\nSuper"
+    "GUI"
   ],
   [
     {
       "y": -0.6500000000000004,
       "x": 2
     },
-    "Super/\n\n\n\n\n\nAlt",
+    "Alt",
     {
       "x": 1,
       "c": "#f7b5b5",
@@ -195,15 +191,16 @@
       "c": "#cccccc",
       "t": "#000000"
     },
-    "Ctrl",
+    "Lead",
     "Fn"
   ],
   [
     {
       "y": -0.9000000000000004,
-      "x": 5
+      "x": 5,
+      "t": "#000000\n\n\n\n\n\n#5754ff"
     },
-    "Space"
+    "Space/\n\n\n\n\n\nDir"
   ],
   [
     {
@@ -211,7 +208,8 @@
       "rx": 7,
       "ry": 1,
       "y": 0.25,
-      "x": 3
+      "x": 3,
+      "t": "#000000"
     },
     "*\n8\n\n\nF8"
   ],
@@ -249,32 +247,47 @@
     {
       "y": -0.71,
       "x": 3,
-      "t": "#000000\n#3ea863"
+      "t": "#000000\n#3ea863\n#5754ff",
+      "fa": [
+        0,
+        0,
+        1
+      ]
     },
-    "I\nì\n\n\nF18"
+    "I\nì\nIns\n\nF18"
   ],
   [
     {
       "y": -0.6499999999999999,
       "x": 2,
-      "t": "#000000\n#3ea863\n\n\n\n\n\n#5e5e5e"
+      "t": "#000000\n#3ea863\n#5754ff\n\n\n\n\n#5e5e5e",
+      "fa": [
+        0,
+        0,
+        1,
+        0,
+        0,
+        0,
+        0,
+        1
+      ]
     },
-    "U\nù\n\n\nF17\n\n\nAG_NOR",
+    "U\nù\nHome\n\nF17\n\n\nAG_NOR",
     {
       "x": 1,
-      "t": "#000000\n#3ea863\n\n\n\n\n\n\n\n\n#ff0000"
+      "t": "#000000\n#3ea863\n#5754ff\n\n\n\n\n\n\n\n#ff0000"
     },
-    "O\nò\n\n\n\n\n\n\n\n\n["
+    "O\nò\nEnd\n\n\n\n\n\n\n\n["
   ],
   [
     {
       "y": -0.75,
-      "x": 5,
-      "t": "#000000\n\n#3ea863\n\n\n\n\n\n\n\n#ff0000"
+      "x": 5
     },
-    "P\n\n£\n\n\n\n\n\n\n\n]",
+    "P\n£\nPgUp\n\n\n\n\n\n\n\n]",
     {
-      "t": "#000000\n\n#3ea863"
+      "t": "#000000\n\n#3ea863",
+      "f": 3
     },
     "_\n-\n±"
   ],
@@ -290,7 +303,7 @@
     {
       "y": -0.71,
       "x": 3,
-      "t": "#000000\n#3ea863"
+      "t": "#000000\n#5754ff"
     },
     "K\n↑"
   ],
@@ -302,7 +315,7 @@
     "J\n↓",
     {
       "x": 1,
-      "t": "#000000\n#3ea863\n\n\n\n\n\n#5e5e5e\n\n\n#ff0000"
+      "t": "#000000\n#5754ff\n\n\n\n\n\n#5e5e5e\n\n\n#ff0000"
     },
     "L\n→\n\n\n\n\n\nLinux\n\n\n\u001e{"
   ],
@@ -314,7 +327,8 @@
     },
     ":\n;\n\n\n\n\n\n\n\n\n}",
     {
-      "t": "#000000\n\n#3ea863"
+      "t": "#000000\n\n#3ea863",
+      "f": 3
     },
     "\"\n'\n≈"
   ],
@@ -322,7 +336,7 @@
     {
       "y": -0.8999999999999999,
       "x": 1,
-      "t": "#000000\n#3ea863"
+      "t": "#000000\n#5754ff"
     },
     "H\n←"
   ],
@@ -363,16 +377,17 @@
     {
       "y": -0.9000000000000004,
       "x": 1,
-      "t": "#000000"
+      "t": "#000000\n\n#5754ff"
     },
-    "N"
+    "N\n\nPgDn"
   ],
   [
     {
       "y": -0.75,
+      "t": "#000000",
       "h": 1.5
     },
-    "Enter"
+    "Enter/\n\n\n\n\n\nCtrl"
   ],
   [
     {
@@ -380,7 +395,7 @@
       "x": 3,
       "t": "#000000\n#3ea863"
     },
-    "←\nHome"
+    "←\n\n\n\nMUTE"
   ],
   [
     {
@@ -395,15 +410,15 @@
       "c": "#cccccc",
       "t": "#000000\n#3ea863"
     },
-    "↓\nPgDn"
+    "↓\n\n\n\nVOLD"
   ],
   [
     {
       "y": -0.75,
       "x": 5
     },
-    "↑\nPgUp",
-    "→\nEnd"
+    "↑\n\n\n\nVOLU",
+    "→\n\n\n\nNEXT"
   ],
   [
     {
