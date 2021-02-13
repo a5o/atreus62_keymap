@@ -1,2 +1,1 @@
-LEADER_ENABLE = yes
 
