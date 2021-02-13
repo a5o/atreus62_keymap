@@ -133,6 +133,10 @@ void matrix_scan_user(void) {
       SEND_STRING(SS_LCTL("a"));
 			SEND_STRING("l");
     }
+
+    SEQ_ONE_KEY(KC_S) { // capture screen (mac)
+      SEND_STRING(SS_LSFT(SS_LGUI("5")));
+    }
   }
 }
 
