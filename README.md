@@ -1,3 +1,5 @@
+NOTE: from now please refer to my [QMK fork](https://github.com/a5o/qmk_firmware) for future updates of the keymap.
+
 # Atreus62 keymap
 
 Atreus62 keymap with accented keys layer (unicodemap) for 
